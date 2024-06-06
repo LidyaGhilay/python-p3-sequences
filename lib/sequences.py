@@ -1,4 +1,27 @@
-def print_fibonacci(length):
+class MyString:
+  def __init__(self, value =''):
+     if not isinstance (value,str):
+        raise ValueError("value must be a string")
+     self.value = value
+
+     def is_sentence(value):
+        return self.value.endswith('.')
+     print(is_sentence())
+
+     def is_question(value):
+        return self.value.endswith('?')
+     print(is_question())
+
+     def is_exclamation(value):
+        return self.value.endswith('!')
+     print(is_exclamation())
+
+     def count_sentences(self):
+        sentences = self.value.replace('?', '.').replace('!', '.').split('.')
+        return len([sentence for sentence in sentences if sentence.strip()])
+     print(count_sentences())
+
+  def print_fibonacci(length):
     if length == 0:
         return []
     elif length == 1:
@@ -13,5 +36,5 @@ def print_fibonacci(length):
             first, second = second, first + second
         return fib_sequence
 
-# Test the function
-print(print_fibonacci(10))
+
+  print(print_fibonacci(10))
